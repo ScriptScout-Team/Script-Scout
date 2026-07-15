@@ -1,0 +1,22 @@
+<div class="login-container">
+  <div class="login-box">
+
+    <h1>ScriptScout</h1>
+    <h2>Login</h2>
+
+    <input
+      type="email"
+      placeholder="Enter Email"
+      [(ngModel)]="email">
+
+    <input
+      type="password"
+      placeholder="Enter Password"
+      [(ngModel)]="password">
+
+    <button (click)="login()">Login</button>
+
+    <p>{{message}}</p>
+
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="upload-container">
+
+  <h1>Upload Video</h1>
+
+  <div class="form-group">
+    <label>Video Title</label>
+    <input type="text" [(ngModel)]="title">
+  </div>
+
+  <div class="form-group">
+    <label>Category</label>
+
+    <select [(ngModel)]="category">
+      <option value="">Select Category</option>
+      <option>Education</option>
+      <option>Entertainment</option>
+      <option>Technology</option>
+      <option>Sports</option>
+      <option>News</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Description</label>
+
+    <textarea rows="5"
+      [(ngModel)]="description">
+    </textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Select Video</label>
+
+    <input
+      type="file"
+      (change)="onFileSelected($event)">
+  </div>
+
+  <button (click)="uploadVideo()">
+      Upload Video
+  </button>
+
+</div>
