@@ -1,23 +1,52 @@
-<div class="container">
+<div class="video-container">
 
-    <h1>Uploaded Videos</h1>
+  <div class="header">
+    <h2>Video Library</h2>
 
-    <div class="video-card" *ngFor="let video of videos">
+    <button (click)="addVideo()">
+      + Add Video
+    </button>
+  </div>
 
-        <h2>{{video.title}}</h2>
+  <div class="search-box">
 
-        <p><strong>Category:</strong> {{video.category}}</p>
+    <input
+      type="text"
+      placeholder="Search videos..."
+      [(ngModel)]="searchText">
 
-        <p><strong>Description:</strong> {{video.description}}</p>
+  </div>
 
-        <p><strong>File:</strong> {{video.fileName}}</p>
+  <div class="video-grid">
 
-        <p><strong>Date:</strong> {{video.uploadDate}}</p>
+    <div class="video-card" *ngFor="let video of filteredVideos()">
 
-        <button>View</button>
+      <img [src]="video.thumbnail" alt="thumbnail">
 
-        <button>Delete</button>
+      <div class="content">
+
+        <h3>{{video.title}}</h3>
+
+        <p>{{video.category}}</p>
+
+        <span>{{video.duration}}</span>
+
+        <div class="actions">
+
+          <button class="edit" (click)="editVideo(video)">
+            Edit
+          </button>
+
+          <button class="delete" (click)="deleteVideo(video)">
+            Delete
+          </button>
+
+        </div>
+
+      </div>
 
     </div>
+
+  </div>
 
 </div>

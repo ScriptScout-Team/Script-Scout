@@ -6,6 +6,7 @@ import { UploadComponent } from './pages/upload/upload.component';
 import { VideoListComponent } from './pages/video-list/video-list.component';
 import { VideoDetailsComponent } from './pages/video-details/video-details.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { VideoPlayerComponent } from './pages/video-player/video-player.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -13,8 +14,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'upload', component: UploadComponent },
   { path: 'video-list', component: VideoListComponent },
-  { path: 'video/:id', component: VideoDetailsComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'video-details', component: VideoDetailsComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'video-player', component: VideoPlayerComponent }
 ];
 
 @NgModule({

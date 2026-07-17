@@ -1,0 +1,96 @@
+<div class="video-page">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+
+    <button class="back-btn">
+      ← Back to Library
+    </button>
+
+    <button class="metadata-btn">
+      Edit Metadata
+    </button>
+
+  </div>
+
+  <div class="content">
+
+    <!-- Left Section -->
+    <div class="video-section">
+
+      <h2>AI Revolution in Healthcare</h2>
+
+      <div class="video-container">
+
+        <video
+          #videoPlayer
+          controls
+          poster="assets/images/video-thumbnail.jpg">
+
+          <source
+            src="assets/videos/demo.mp4"
+            type="video/mp4">
+
+          Your browser does not support HTML5 video.
+
+        </video>
+
+      </div>
+
+      <!-- Timeline -->
+
+      <div class="timeline">
+
+        <div
+          class="chapter"
+          *ngFor="let chapter of chapters; let i = index"
+          [class.active]="activeChapter === i"
+          (click)="playChapter(i)">
+
+          <span>{{ chapter.start }}</span>
+
+          <p>{{ chapter.title }}</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Right Side Panel -->
+
+    <div class="side-panel">
+
+      <div class="tabs">
+
+        <button class="active">
+          Chapters
+        </button>
+
+        <button>
+          Transcript
+        </button>
+
+      </div>
+
+      <div class="chapter-list">
+
+        <div
+          class="item"
+          *ngFor="let chapter of chapters; let i = index"
+          [class.active]="activeChapter === i"
+          (click)="playChapter(i)">
+
+          <h4>{{ chapter.title }}</h4>
+
+          <small>{{ chapter.start }} sec</small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
