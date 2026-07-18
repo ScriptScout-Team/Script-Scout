@@ -14,6 +14,12 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { VideoPlayerComponent } from './pages/video-player/video-player.component';
+import { TranscriptViewerComponent } from './pages/transcript-viewer/transcript-viewer.component';
+import { MetadataEditorComponent } from './pages/metadata-editor/metadata-editor.component';
+import { ChapterBreakdownComponent } from './pages/chapter-breakdown/chapter-breakdown.component';
+import { SearchCatalogComponent } from './pagees/search-catalog/search-catalog.component';
+import { ProcessingqueueComponent } from './pages/processingqueue/processingqueue.component';
+import { TagsComponent } from './tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,13 @@ import { VideoPlayerComponent } from './pages/video-player/video-player.componen
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    TranscriptViewerComponent,
+    MetadataEditorComponent,
+    ChapterBreakdownComponent,
+    SearchCatalogComponent,
+    ProcessingqueueComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
