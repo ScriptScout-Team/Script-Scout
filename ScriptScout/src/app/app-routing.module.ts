@@ -13,6 +13,7 @@ import { MetadataEditorComponent } from './pages/metadata-editor/metadata-editor
 import { ChapterBreakdownComponent } from './pages/chapter-breakdown/chapter-breakdown.component';
 import { SearchCatalogComponent } from './pages/search-catalog/search-catalog.component';
 import { ProcessingqueueComponent } from './pages/processingqueue/processingqueue.component';
+import { TagsComponent } from './tags/tags.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'metadata-editor', component: MetadataEditorComponent },
   { path: 'chapter-breakdown', component: ChapterBreakdownComponent },
   { path: 'search-catalog', component: SearchCatalogComponent },
-  { path: 'processingqueue', component: ProcessingqueueComponent }
+  { path: 'processingqueue', component: ProcessingqueueComponent },
+  {path: 'tags', component: TagsComponent}
 ];
 
 @NgModule({

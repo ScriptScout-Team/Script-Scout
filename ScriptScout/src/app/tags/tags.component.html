@@ -1,1 +1,115 @@
-<p>tags works!</p>
+<div class="tags-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo">
+      <h2>ScriptScout</h2>
+    </div>
+
+    <ul class="menu">
+      <li><i class="fas fa-home"></i> Dashboard</li>
+      <li><i class="fas fa-folder"></i> Media Library</li>
+      <li><i class="fas fa-upload"></i> Upload Video</li>
+      <li><i class="fas fa-spinner"></i> Processing Queue</li>
+      <li><i class="fas fa-edit"></i> Metadata Editor</li>
+      <li><i class="fas fa-file-alt"></i> Transcript</li>
+      <li><i class="fas fa-list"></i> Chapter Breakdown</li>
+      <li><i class="fas fa-search"></i> Search & Catalog</li>
+
+      <li class="active">
+        <i class="fas fa-tags"></i>
+        Tags & Keywords
+      </li>
+
+      <li><i class="fas fa-chart-line"></i> Reports</li>
+    </ul>
+
+    <div class="bottom-menu">
+      <p><i class="fas fa-cog"></i> Settings</p>
+      <p><i class="fas fa-sign-out-alt"></i> Logout</p>
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+
+  <div class="main-content">
+
+    <div class="header">
+
+      <div>
+        <h2>Tags & Keywords</h2>
+        <p>Manage video tags and keywords for better search results.</p>
+      </div>
+
+      <button
+        class="add-btn"
+        (click)="addTag()">
+
+        + Add Tag
+
+      </button>
+
+    </div>
+
+    <div class="tags-card">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>#</th>
+            <th>Tag</th>
+            <th>Category</th>
+            <th>Usage</th>
+            <th>Actions</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let tag of tags; let i=index">
+
+            <td>{{i+1}}</td>
+
+            <td>{{tag.name}}</td>
+
+            <td>{{tag.category}}</td>
+
+            <td>{{tag.usage}}</td>
+
+            <td>
+
+              <button
+                class="edit-btn"
+                (click)="editTag(i)">
+
+                Edit
+
+              </button>
+
+              <button
+                class="delete-btn"
+                (click)="deleteTag(i)">
+
+                Delete
+
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

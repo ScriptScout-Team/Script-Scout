@@ -1,1 +1,123 @@
-<p>processingqueue works!</p>
+<div class="processing-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo">
+      <h2>ScriptScout</h2>
+    </div>
+
+    <ul class="menu">
+      <li><i class="fas fa-home"></i> Dashboard</li>
+      <li><i class="fas fa-folder"></i> Media Library</li>
+      <li><i class="fas fa-upload"></i> Upload Video</li>
+
+      <li class="active">
+        <i class="fas fa-spinner"></i>
+        Processing Queue
+      </li>
+
+      <li><i class="fas fa-edit"></i> Metadata Editor</li>
+      <li><i class="fas fa-file-alt"></i> Transcript</li>
+      <li><i class="fas fa-list"></i> Chapter Breakdown</li>
+      <li><i class="fas fa-search"></i> Search & Catalog</li>
+      <li><i class="fas fa-tags"></i> Tags & Keywords</li>
+      <li><i class="fas fa-chart-line"></i> Reports</li>
+    </ul>
+
+    <div class="bottom-menu">
+      <p><i class="fas fa-cog"></i> Settings</p>
+      <p><i class="fas fa-sign-out-alt"></i> Logout</p>
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+
+  <div class="main-content">
+
+    <div class="header">
+
+      <div>
+        <h2>Processing Queue</h2>
+        <p>Monitor video processing progress in real time.</p>
+      </div>
+
+      <button class="refresh-btn" (click)="refreshQueue()">
+        Refresh
+      </button>
+
+    </div>
+
+    <div class="queue-card">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>Video Name</th>
+            <th>Uploaded By</th>
+            <th>Status</th>
+            <th>Progress</th>
+            <th>Started</th>
+            <th>Action</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let item of queue">
+
+            <td>{{item.video}}</td>
+
+            <td>{{item.user}}</td>
+
+            <td>
+              <span class="status">
+                {{item.status}}
+              </span>
+            </td>
+
+            <td>
+
+              <div class="progress-bar">
+
+                <div
+                  class="progress"
+                  [style.width.%]="item.progress">
+                </div>
+
+              </div>
+
+              {{item.progress}}%
+
+            </td>
+
+            <td>{{item.time}}</td>
+
+            <td>
+
+              <button
+                class="cancel-btn"
+                (click)="cancel(item)">
+
+                Cancel
+
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

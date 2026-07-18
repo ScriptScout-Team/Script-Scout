@@ -7,4 +7,59 @@ import { Component } from '@angular/core';
 })
 export class ChapterBreakdownComponent {
 
+  chapters = [
+    {
+      start: '00:00',
+      end: '02:15',
+      title: 'Introduction'
+    },
+    {
+      start: '02:16',
+      end: '06:45',
+      title: 'What is Artificial Intelligence?'
+    },
+    {
+      start: '06:46',
+      end: '11:30',
+      title: 'AI Applications in Healthcare'
+    },
+    {
+      start: '11:31',
+      end: '16:20',
+      title: 'Benefits and Challenges'
+    },
+    {
+      start: '16:21',
+      end: '20:00',
+      title: 'Future of AI'
+    }
+  ];
+
+  constructor() {}
+
+  generateChapters(): void {
+    alert('AI is generating chapters...');
+  }
+
+  addChapter(): void {
+    this.chapters.push({
+      start: '',
+      end: '',
+      title: ''
+    });
+  }
+
+  deleteChapter(index: number): void {
+    this.chapters.splice(index, 1);
+  }
+
+  resetChapters(): void {
+    this.chapters = [];
+  }
+
+  saveChapters(): void {
+    console.log(this.chapters);
+    alert('Chapters saved successfully!');
+  }
+
 }

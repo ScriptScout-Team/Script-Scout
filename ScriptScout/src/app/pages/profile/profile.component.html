@@ -1,1 +1,186 @@
-<p>profile works!</p>
+<div class="profile-page">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="assets/logo.png" alt="Logo">
+      <h2>ScriptScout</h2>
+    </div>
+
+    <ul class="menu">
+      <li><i class="fas fa-home"></i> Dashboard</li>
+      <li><i class="fas fa-folder"></i> Media Library</li>
+      <li><i class="fas fa-upload"></i> Upload Video</li>
+      <li><i class="fas fa-spinner"></i> Processing Queue</li>
+      <li><i class="fas fa-edit"></i> Metadata Editor</li>
+      <li><i class="fas fa-file-alt"></i> Transcript</li>
+      <li><i class="fas fa-list"></i> Chapter Breakdown</li>
+      <li><i class="fas fa-search"></i> Search & Catalog</li>
+      <li><i class="fas fa-tags"></i> Tags & Keywords</li>
+
+      <li class="active">
+        <i class="fas fa-user"></i>
+        Profile & Settings
+      </li>
+    </ul>
+
+    <div class="bottom-menu">
+      <p><i class="fas fa-cog"></i> Settings</p>
+      <p><i class="fas fa-sign-out-alt"></i> Logout</p>
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+
+  <div class="main-content">
+
+    <div class="header">
+      <div>
+        <h2>Profile & Settings</h2>
+        <p>Manage your account information and preferences.</p>
+      </div>
+    </div>
+
+    <div class="profile-card">
+
+      <div class="profile-image">
+
+        <img src="assets/profile.png" alt="Profile">
+
+        <button class="change-photo">
+          Change Photo
+        </button>
+
+      </div>
+
+      <div class="form">
+
+        <div class="row">
+
+          <div class="form-group">
+            <label>Full Name</label>
+            <input
+              type="text"
+              [(ngModel)]="user.fullName">
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              [(ngModel)]="user.email">
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input
+              type="text"
+              [(ngModel)]="user.phone">
+          </div>
+
+          <div class="form-group">
+            <label>Role</label>
+            <input
+              type="text"
+              [(ngModel)]="user.role">
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="form-group">
+            <label>Current Password</label>
+            <input
+              type="password"
+              [(ngModel)]="user.currentPassword">
+          </div>
+
+          <div class="form-group">
+            <label>New Password</label>
+            <input
+              type="password"
+              [(ngModel)]="user.newPassword">
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="form-group">
+            <label>Language</label>
+
+            <select [(ngModel)]="user.language">
+              <option>English</option>
+              <option>Telugu</option>
+              <option>Hindi</option>
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Theme</label>
+
+            <select [(ngModel)]="user.theme">
+              <option>Light</option>
+              <option>Dark</option>
+            </select>
+
+          </div>
+
+        </div>
+
+        <div class="settings">
+
+          <label>
+            <input
+              type="checkbox"
+              [(ngModel)]="user.notifications">
+
+            Enable Notifications
+          </label>
+
+          <label>
+            <input
+              type="checkbox"
+              [(ngModel)]="user.autoSave">
+
+            Enable Auto Save
+          </label>
+
+        </div>
+
+        <div class="buttons">
+
+          <button
+            class="reset-btn"
+            (click)="resetProfile()">
+
+            Reset
+
+          </button>
+
+          <button
+            class="save-btn"
+            (click)="saveProfile()">
+
+            Save Changes
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

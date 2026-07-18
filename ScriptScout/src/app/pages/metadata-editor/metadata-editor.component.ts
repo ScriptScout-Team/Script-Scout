@@ -7,4 +7,63 @@ import { Component } from '@angular/core';
 })
 export class MetadataEditorComponent {
 
+  metadata = {
+    title: 'AI Revolution in Healthcare',
+    category: 'Technology',
+    subCategory: 'Healthcare',
+    videoCategory: 'English',
+
+    description:
+      'This episode explores how Artificial Intelligence is revolutionizing healthcare through diagnosis, treatment, automation, and future possibilities.',
+
+    language: 'English',
+    rating: 'PG',
+    visibility: 'Public',
+
+    tags: [
+      'AI',
+      'Healthcare',
+      'Machine Learning',
+      'Medical Technology',
+      'Future of Healthcare'
+    ]
+  };
+
+  constructor() {}
+
+  saveMetadata(): void {
+    console.log('Saved Metadata:', this.metadata);
+    alert('Metadata saved successfully!');
+  }
+
+  resetForm(): void {
+    this.metadata = {
+      title: '',
+      category: '',
+      subCategory: '',
+      videoCategory: '',
+      description: '',
+      language: '',
+      rating: '',
+      visibility: '',
+      tags: []
+    };
+  }
+
+  regenerateMetadata(): void {
+    alert('AI Regeneration Started...');
+  }
+
+  addKeyword(): void {
+    const keyword = prompt('Enter new keyword');
+
+    if (keyword && keyword.trim() !== '') {
+      this.metadata.tags.push(keyword.trim());
+    }
+  }
+
+  removeKeyword(index: number): void {
+    this.metadata.tags.splice(index, 1);
+  }
+
 }

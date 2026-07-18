@@ -17,7 +17,7 @@ import { VideoPlayerComponent } from './pages/video-player/video-player.componen
 import { TranscriptViewerComponent } from './pages/transcript-viewer/transcript-viewer.component';
 import { MetadataEditorComponent } from './pages/metadata-editor/metadata-editor.component';
 import { ChapterBreakdownComponent } from './pages/chapter-breakdown/chapter-breakdown.component';
-import { SearchCatalogComponent } from './pagees/search-catalog/search-catalog.component';
+import { SearchCatalogComponent } from './pages/search-catalog/search-catalog.component';
 import { ProcessingqueueComponent } from './pages/processingqueue/processingqueue.component';
 import { TagsComponent } from './tags/tags.component';
 
